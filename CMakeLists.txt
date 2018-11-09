@@ -62,6 +62,8 @@ add_custom_command(
     COMMAND mkdir -p build-temp
     COMMAND ${CMAKE_COMMAND} -E env
             TOOLPREFIX=${CROSS_COMPILER_PREFIX}
+            CMAKE_C_COMPILER=${CMAKE_C_COMPILER}
+            TOOLCHAIN=${TOOLCHAIN}
             # TODO: should also pass in the cflags for the CMAKE_BUILD_TYPE ?
             NK_CFLAGS="${compile_options}"
             TARGET=${muslc_arch}
